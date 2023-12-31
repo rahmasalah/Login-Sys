@@ -5,17 +5,6 @@ var notExist = document.getElementById("emailExist")
 var required = document.getElementById("required")
 var inCorrect = document.getElementById("inCorrect")
 var signUp = document.getElementById("signUp")
-if(localStorage.getItem("info"!=null)){
-    var memory = JSON.parse(localStorage.getItem("info"))
-    login.addEventListener('click',function(){
-        check()
-    })
-}
-else{
-    login.addEventListener('click',function(){
-        notExist.classList.remove("d-none")
-    })
-}
 
 
 
@@ -64,7 +53,10 @@ inputPassword.addEventListener("input",validationPassword)
 
 
     function check(){
-        if(inputEmail.value == "" || inputPassword.value == ""){
+        var memory = JSON.parse(localStorage.getItem("info"))
+
+        if(localStorage.getItem("info")!=null){
+            if(inputEmail.value == "" || inputPassword.value == ""){
                 required.classList.remove("d-none")
                 notExist.classList.add("d-none")
                 return
@@ -90,9 +82,18 @@ inputPassword.addEventListener("input",validationPassword)
             required.classList.add("d-none")
             inCorrect.classList.add("d-none")
         }
+           
+            return
+        }
+        notExist.classList.remove("d-none")
+
+
+}
     
-    }
     
+    
+
+    login.addEventListener('click',check)
 
 
 

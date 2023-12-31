@@ -10,7 +10,6 @@ var success = document.getElementById("success")
 
 
 var userInfo=[]
-var sessionName=[]
 
 if(localStorage.getItem("info" !=null)){
     var userInfo= JSON.parse(localStorage.getItem("info"))
@@ -38,12 +37,10 @@ function addInfo(){
             }
         }
         userInfo.push(info)
-        sessionName.push(info.name)
         isExist.classList.add("d-none")
         required.classList.add("d-none")
         success.classList.remove("d-none")
         localStorage.setItem("info",JSON.stringify(userInfo))
-        localStorage.setItem("name",JSON.stringify(sessionName))
     }
 }
 
