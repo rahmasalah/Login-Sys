@@ -26,7 +26,6 @@ h1{
 
 .width{
     width: 50rem;
-    height: 21.875rem;
 }
 @media (max-width: 500px) {
     html{

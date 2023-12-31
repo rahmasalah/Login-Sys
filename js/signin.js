@@ -1,12 +1,22 @@
 var inputEmail = document.getElementById("inputEmail")
 var inputPassword = document.getElementById("inputPassword")
 var login = document.getElementById("login")
-var memory = JSON.parse(localStorage.getItem("info"))
 var notExist = document.getElementById("emailExist")
 var required = document.getElementById("required")
 var inCorrect = document.getElementById("inCorrect")
 var signUp = document.getElementById("signUp")
-console.log(memory)
+if(localStorage.getItem("info"!=null)){
+    var memory = JSON.parse(localStorage.getItem("info"))
+    login.addEventListener('click',function(){
+        check()
+    })
+}
+else{
+    login.addEventListener('click',function(){
+        notExist.classList.remove("d-none")
+    })
+}
+
 
 
 signUp.addEventListener('click',function(){
@@ -53,38 +63,43 @@ inputPassword.addEventListener("input",validationPassword)
 
 
 
-function check(){
-    if(inputEmail.value == "" || inputPassword.value == ""){
-            required.classList.remove("d-none")
-            notExist.classList.add("d-none")
-            return
-    }
-    else{
-        for(var i=0; i<memory.length; i++){
-            if(memory[i].email==inputEmail.value){
-                if(memory[i].pass!=inputPassword.value){
-                    inCorrect.classList.remove("d-none")
+    function check(){
+        if(inputEmail.value == "" || inputPassword.value == ""){
+                required.classList.remove("d-none")
+                notExist.classList.add("d-none")
+                return
+        }
+        else{
+            for(var i=0; i<memory.length; i++){
+                if(memory[i].email==inputEmail.value){
+                    if(memory[i].pass!=inputPassword.value){
+                        inCorrect.classList.remove("d-none")
+                        notExist.classList.add("d-none")
+                        required.classList.add("d-none")
+                        return
+                    }
+                    localStorage.setItem("userName",memory[i].name)
                     notExist.classList.add("d-none")
                     required.classList.add("d-none")
-                    return
+                    inCorrect.classList.add("d-none")
+                    window.location= './home.html'
+                    return;
                 }
-                localStorage.setItem("userName",memory[i].name)
-                notExist.classList.add("d-none")
-                required.classList.add("d-none")
-                inCorrect.classList.add("d-none")
-                window.location= './home.html'
-                return;
             }
+            notExist.classList.remove("d-none")
+            required.classList.add("d-none")
+            inCorrect.classList.add("d-none")
         }
-        notExist.classList.remove("d-none")
-        required.classList.add("d-none")
-        inCorrect.classList.add("d-none")
+    
     }
+    
 
-}
 
 
-console.log(memory[1].name)
+    
+
+
+
 
 
 
