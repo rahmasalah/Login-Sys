@@ -1,0 +1,30 @@
+#bg{
+    background-image: url("../gradient-dark-blue-futuristic-digital-background.jpg");
+    background-position: center center;
+    background-size: cover;
+
+}
+
+#getName{
+    background-color: rgba(255, 255, 255, 0.133);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+#background{
+    background-color: rgba(242, 242, 242, 0.27);
+    
+    
+}
+
+.width{
+    width: 46.875rem;
+    height: 9.375rem;
+}
+
+
+@media (max-width: 500px) {
+    html{
+        font-size: 14px;
+    }
+}

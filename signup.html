@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+
+    <!-- bootstrap style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+    <main>
+        <section  class="vh-100 d-flex p-3" id="bg">
+            <div id="signUp"class="m-auto text-center p-5 border border-1 rounded-3 border-white width">
+                <h1>SignUp</h1>
+                <div>
+                    <input type="text" id="userName" placeholder=" Enter Your Name" class="form-control my-3" >
+                </div>
+                <div class="alert d-none text-white" id="alertName">Name Must Contain at least 3 letters</div>
+                <div>
+                    <input type="email" placeholder=" Enter Your Email" class="form-control my-3" id="userEmail">
+                </div>
+                <div class="alert d-none text-white" id="alertEmail">Email Must end with (@gmail or @yahoo.com)</div>
+
+                <div>
+                <input type="password" placeholder=" Enter Your Password" class="form-control" id="userPassword">
+                <div class="alert d-none text-white" id="alertPass">Password Must containt at least 8 Numbers & letters</div>
+                </div>
+                <h3 class="d-none text-white fs-5 my-3" id="success">Succss</h3>
+                <div class="alert d-none text-white" id="required" >All inputs Required</div>
+                <div class="alert d-none text-white" id="isExist">Account Exists</div>
+                <button class="btn w-100 my-3 text-white" id="submitInput">Submit</button>
+                <div class="my-3">
+                    <h6 class="text-white">You have an account?</h6>
+                    <button class="btn text-white" id="signIn">SignIn</button>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+   
+   
+
+
+    <script src="js/signup.js"></script>
+</body>
+</html>

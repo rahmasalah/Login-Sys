@@ -1,0 +1,35 @@
+#bg{
+    background-image: url("../gradient-dark-blue-futuristic-digital-background.jpg");
+    background-position: center center;
+    background-size: cover;
+
+}
+#login{
+    background-color: rgba(255, 255, 255, 0.133);
+}
+
+#loginPage{
+    background-color: rgba(255, 255, 255, 0.133);
+    position: relative;
+}
+
+h1{
+    font-size: 1.875rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(242, 242, 242);
+    padding: 15px;
+    font-style: italic;
+}
+
+.width{
+    width: 50rem;
+    height: 21.875rem;
+}
+@media (max-width: 500px) {
+    html{
+        font-size: 14px;
+    }
+}

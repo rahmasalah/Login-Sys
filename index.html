@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- bootstrap style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="css/singin.css">
+</head>
+<body>
+
+    <main>
+        <section class="vh-100 d-flex p-3" id="bg">
+            <div id="loginPage" class=" m-auto text-center p-5 border border-1 rounded-3 border-white width">
+            <h1>Login</h1>
+
+            <div>
+                <input type="email" placeholder=" Enter Your Email" class="form-control my-3" id="inputEmail">
+            </div>
+
+            <div>
+            <input type="password" placeholder=" Enter Your Password" class="form-control" id="inputPassword">
+            </div>
+            <div class="alert d-none text-white" id="required" >All inputs Required</div>
+            <div class="alert  d-none text-white" id="emailExist">Email Doesn't Exist</div>
+            <div class="alert d-none text-white" id="inCorrect">Incorrect Password</div>
+
+
+            <button class="btn w-100 my-3 text-white" id="login" onclick="check()">Login</button>
+            <div class="my-3 text-white">
+            <h6 >Don’t have an account?</h6>
+            <button class="btn text-decoration-none text-white" id="signUp">Sign Up</button>
+            </div>
+
+            </div>
+
+        </section>
+    </main>
+    <script src="js/signin.js"></script>
+</body>
+</html>
