@@ -85,8 +85,7 @@ inputPassword.addEventListener("input",validationPassword)
            
             return
         }
-        notExist.classList.remove("d-none")
-
+        checkMemory()
 
 }
     
@@ -97,12 +96,24 @@ inputPassword.addEventListener("input",validationPassword)
 
 
 
-    
+    console.log(inputEmail.value)
 
 
 
 
-
+function checkMemory(){
+    if(localStorage.getItem("info")==null){
+        if(inputEmail.value == "" || inputPassword.value == ""){
+            required.classList.remove("d-none")
+            notExist.classList.add("d-none")
+            return
+        }
+        else{
+        notExist.classList.remove("d-none")
+        required.classList.add("d-none")
+        }
+    }
+}
 
 
 
